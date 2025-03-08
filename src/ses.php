@@ -407,11 +407,11 @@ class SimpleEmailService
             'headers' => $this->_headers,
             'http_errors' => false
         ];
-        if (strlen($this->_body)) {
+        if (strlen($this->_body ?? '')) {
             $query['body'] = $this->_body;
         }
         $endpoint = $this->_endpoint;
-        if (strlen($this->_query_parameters)) {
+        if (strlen($this->_query_parameters ?? '')) {
             $endpoint .= '?' . $this->_query_parameters;
         }
         
